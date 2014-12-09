@@ -25,6 +25,10 @@ Custom Preloader it's a plugin that it shows to you something, and behind that y
 
 = Yeap, But It's Simple, you can add your image url change the background color and the margins for the image!
 
+= Can i turn off the plugin anytime i want?
+
+= Sure! you can Deactivate Custom Preloader without lose your settings!
+
 == Screenshots ==
 
 1. Screenshot For The Admin panel
