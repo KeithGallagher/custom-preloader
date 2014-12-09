@@ -28,6 +28,8 @@ Custom Preloader it's a plugin that it shows to you something, and behind that y
 == Screenshots ==
 
 1. No Alerts, No Problems
+Screenshot-1.png
+Screenshot-2.png
 
 == Upgrade Notice ==
 = 1.0 =
