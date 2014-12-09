@@ -27,9 +27,8 @@ Custom Preloader it's a plugin that it shows to you something, and behind that y
 
 == Screenshots ==
 
-1. No Alerts, No Problems
-Screenshot-1.png
-Screenshot-2.png
+1. Screenshot For The Admin panel
+2. Screenshot For Preloader
 
 == Upgrade Notice ==
 = 1.0 =
