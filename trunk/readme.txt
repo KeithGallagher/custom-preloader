@@ -13,6 +13,8 @@ Custom Preloader, Nice, Easy and Simple - make your website more cool
 == Description ==
 
 Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off
+This Plugin it more for Design Reasons! because a few websites are slow to load and they don't look nice.
+Custom Preloader Hides your Website and shows something such as an image and when your website it's ready Custom Preloader Goes Off
 
 == Installation ==
 
