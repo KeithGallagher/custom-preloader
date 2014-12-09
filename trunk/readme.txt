@@ -31,6 +31,14 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 
 = Sure! you can Deactivate Custom Preloader without lose your settings!
 
+= how can i upload my image?
+
+= you can put the url of image to the "Set Image" field
+
+= how can i change the position of image?
+
+= click to advanced section and play with the margins "left,top,right,bottom"
+
 == Screenshots ==
 
 1. Screenshot For The Admin panel
