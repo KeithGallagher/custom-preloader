@@ -38,4 +38,4 @@ Screenshot-2.png
 == Changelog ==
 
 = 1.0 =
-* Edit Design
+* First stable release
