@@ -274,7 +274,7 @@ function cp_admin_panel()
 				<div class="postbox" style="">
 					<h3><div id="advanced">Active / De-Active</div></h3>
 					<div style="margin: 10px !important;">
-						<span>							<style><?php /*require_once('css/checkbox.css');*/?></style>
+						<span>							<style><?php require_once('css/checkbox.css');?></style>
 							<section style=" margin-bottom: -30px !important; ">
 								<p>Custom Preloader: </p>
 									<div class="slideThree">
