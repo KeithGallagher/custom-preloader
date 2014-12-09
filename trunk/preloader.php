@@ -1,12 +1,13 @@
 <?php
 
 /*
-* Plugin Name: Custom Preloader
-* Plugin URI: http://nikostsolakos.tk/wordpress/Custom_Preloader/Custom_Preloader.zip
-* Description: Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off* Version: 1.0
-* Author: NikosTsolakos
-* Author URI: http://nikostsolakos.tk
-* License: GPLv2
+Plugin Name: Custom Preloader
+Plugin URI: http://nikostsolakos.tk/wordpress/Custom_Preloader/Custom_Preloader.zip
+Description: Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off
+Version: 1.0
+Author: NikosTsolakos
+Author URI: http://nikostsolakos.tk
+License: GPLv2
 */
 
 /*
