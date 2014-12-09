@@ -36,4 +36,4 @@ Custom Preloader it's a plugin that it shows to you something, and behind that y
 == Changelog ==
 
 = 1.0 =
-* First stable release
+* Edit Design
