@@ -4,7 +4,7 @@ Donate link: http://www.nikostsolakos.tk
 Tags: preloader, custom
 Requires at least: 3.0
 Tested up to: 4.0.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,3 +38,6 @@ Custom Preloader it's a plugin that it shows to you something, and behind that y
 
 = 1.0 =
 * First stable release
+
+= 1.1 =
+* Update Style
