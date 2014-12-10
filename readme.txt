@@ -2,7 +2,7 @@
 Contributors: NikosTsolakos
 Donate link: http://www.nikostsolakos.tk
 Tags: preloader, custom, image, image loader, image preloader, loader, page preloader, site preloader
-Requires at least: 3.0
+Requires at least: 3.x
 Tested up to: 4.0.1
 Stable tag: 1.0
 License: GPLv2
