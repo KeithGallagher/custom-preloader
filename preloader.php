@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Custom Preloader
-Plugin URI: http://nikostsolakos.tk/wordpress/Custom_Preloader/Custom_Preloader.zip
+Plugin URI: https://downloads.wordpress.org/plugin/custom-preloader.1.0.zip
 Description: Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off
 Version: 1.0
 Author: NikosTsolakos
