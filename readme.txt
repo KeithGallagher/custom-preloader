@@ -1,10 +1,10 @@
 === Custom Preloader ===
 Contributors: NikosTsolakos
 Donate link: http://www.nikostsolakos.tk
-Tags: preloader, custom, image, image loader, image preloader, loader, page preloader, site preloader
+Tags: preloader, custom, image, image loader, image preloader, loader, page preloader, site preloader, colorful background, colorful
 Requires at least: 3.x
-Tested up to: 4.0.1
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,10 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 
 * Set Your color
 * Set Your Image
-* Set Image Width - Height and more..
+* Set Image Width - Height
+* Set Margins Options
+* Set Simple Background
+* Set ColorFul Background
 
 ### Rate This Plugin
 
@@ -41,31 +44,39 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 == Frequently Asked Questions ==
 
 = Are there any settings I can adjust?
-
-= Yeap, But It's Simple, you can add your image url change the background color and the margins for the image!
+= Yeap, First When you Active my Plugin Click Save Changes.
 
 = Can i turn off the plugin anytime i want?
-
 = Sure! you can Deactivate Custom Preloader without lose your settings!
 
 = how can i upload my image?
-
 = you can put the url of image to the "Set Image" field
 
 = how can i change the position of image?
-
 = click to advanced section and play with the margins "left,top,right,bottom"
+
+= What is colorful background?
+= ColorFul Background it's a gradient Background. find it in ColorFul Background Section
 
 == Screenshots ==
 
-1. Screenshot For The Admin panel
-2. Screenshot For Preloader
+1. Screenshot For All Settings
+2. Screenshot For ColorFul Background Settings
+3. Screenshot For Advanced Settings
 
 == Upgrade Notice ==
+= 1.1 =
+* Set ColorFul Background
+* Fix Bugs
+
 = 1.0 =
 * Set Background Color
 
 == Changelog ==
+
+= 1.1 =
+* Set ColorFul Background
+* Fix Bugs
 
 = 1.0 =
 * First stable release
