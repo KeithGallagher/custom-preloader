@@ -303,24 +303,24 @@ function cp_admin_panel()
 				<div class="postbox" style="">
 					<h3><div id="advanced">Active / De-Active</div></h3>
 					<div style="margin: 10px !important;">
-						<span>							<style><?php require_once('css/checkbox.css');?></style>
+						<span>	
 							<section style=" margin-bottom: -30px !important; ">
 								<p>Simple Background: </p>
 									<div class="slideThree">
-										<input type="radio" class="ch_location" value="None" id="slideThree" style="display: none;" name="pr_settings[enabled_settings]" <?php if(isset($options['bg_gradient_enabled'])) {echo 'disabled';}?> <?php if (isset($options['enabled_settings'])) { echo 'checked="true"';}?> />
+										<input type="checkbox" class="ch_location" value="None" id="slideThree" style="display: none;" name="pr_settings[enabled_settings]" <?php if(isset($options['bg_gradient_enabled'])) {echo 'disabled';}?> <?php if (isset($options['enabled_settings'])) { echo 'checked="true"';}?> />
 										<label for="slideThree"><?php if(isset($options['bg_gradient_enabled'])) { echo '<div class="tool-tip slideIn top">Set Off <b>ColorFul Background</b></div>'; }?></label>
 									</div>
-							</section>							<style><?php require_once('css/checkbox.css');?></style>
+							</section>
 							<section style=" margin-bottom: -30px !important; ">
 								<p>ColorFul Background: </p>
 									<div class="slideThree">
-										<input type="radio" class="ch_location" value="None" id="bg_gradient_enabled" style="display: none;" name="pr_settings[bg_gradient_enabled]" <?php if(isset($options['enabled_settings'])) {echo 'disabled';}?> <?php if (isset($options['bg_gradient_enabled'])) { echo 'checked="true"';}?> />
+										<input type="checkbox" class="ch_location" value="None" id="bg_gradient_enabled" style="display: none;" name="pr_settings[bg_gradient_enabled]" <?php if(isset($options['enabled_settings'])) {echo 'disabled';}?> <?php if (isset($options['bg_gradient_enabled'])) { echo 'checked="true"';}?> />
 										<label for="bg_gradient_enabled"><?php if(isset($options['enabled_settings'])) { echo '<div class="tool-tip slideIn top">Set Off <b>Simple Background</b></div>'; }?></label>
 									</div>
 							</section>
 						</span>
 					</div>
-				</div>				
+				</div>					
 				<div class="postbox">
 					<?php settings_fields('pr_settings'); ?>
 					<?php do_settings_sections(__FILE__); ?>
