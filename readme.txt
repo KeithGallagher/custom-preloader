@@ -1,10 +1,10 @@
 === Custom Preloader ===
 Contributors: NikosTsolakos
-Donate link: http://www.nikostsolakos.tk
+Donate link: https://profiles.wordpress.org/nikostsolakos
 Tags: preloader, custom, image, image loader, image preloader, loader, page preloader, site preloader, colorful background, colorful
 Requires at least: 3.x
 Tested up to: 4.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,10 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 
 * [Required Fields](https://wordpress.org/plugins/required-fields/)
 
+### Thanks Too
+
+* For The ColorFul Background: [@WebCoreIT](https://www.twitter.com/WebCoreIT)
+
 == Installation ==
 
 1. Extract the `Custom-Preloader` folder to your `wp-content/plugins` directory
@@ -65,6 +69,9 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 3. Screenshot For Advanced Settings
 
 == Upgrade Notice ==
+= 1.2 =
+* Fix Important Bugs ( ON/OFF Buttons)
+
 = 1.1 =
 * Set ColorFul Background
 * Fix Bugs

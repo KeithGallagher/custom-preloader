@@ -4,9 +4,9 @@
 Plugin Name: Custom Preloader
 Plugin URI: https://wordpress.org/plugins/custom-preloader/
 Description: Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off
-Version: 1.1
+Version: 1.2
 Author: NikosTsolakos
-Author URI: http://nikostsolakos.tk
+Author URI: https://profiles.wordpress.org/nikostsolakos
 License: GPLv2
 */
 
@@ -307,14 +307,14 @@ function cp_admin_panel()
 							<section style=" margin-bottom: -30px !important; ">
 								<p>Simple Background: </p>
 									<div class="slideThree">
-										<input type="checkbox" class="ch_location" value="None" id="slideThree" style="display: none;" name="pr_settings[enabled_settings]" <?php if(isset($options['bg_gradient_enabled'])) {echo 'disabled';}?> <?php if (isset($options['enabled_settings'])) { echo 'checked="true"';}?> />
+										<input type="radio" class="ch_location" value="None" id="slideThree" style="display: none;" name="pr_settings[enabled_settings]" <?php if(isset($options['bg_gradient_enabled'])) {echo 'disabled';}?> <?php if (isset($options['enabled_settings'])) { echo 'checked="true"';}?> />
 										<label for="slideThree"><?php if(isset($options['bg_gradient_enabled'])) { echo '<div class="tool-tip slideIn top">Set Off <b>ColorFul Background</b></div>'; }?></label>
 									</div>
 							</section>							<style><?php require_once('css/checkbox.css');?></style>
 							<section style=" margin-bottom: -30px !important; ">
 								<p>ColorFul Background: </p>
 									<div class="slideThree">
-										<input type="checkbox" class="ch_location" value="None" id="bg_gradient_enabled" style="display: none;" name="pr_settings[bg_gradient_enabled]" <?php if(isset($options['enabled_settings'])) {echo 'disabled';}?> <?php if (isset($options['bg_gradient_enabled'])) { echo 'checked="true"';}?> />
+										<input type="radio" class="ch_location" value="None" id="bg_gradient_enabled" style="display: none;" name="pr_settings[bg_gradient_enabled]" <?php if(isset($options['enabled_settings'])) {echo 'disabled';}?> <?php if (isset($options['bg_gradient_enabled'])) { echo 'checked="true"';}?> />
 										<label for="bg_gradient_enabled"><?php if(isset($options['enabled_settings'])) { echo '<div class="tool-tip slideIn top">Set Off <b>Simple Background</b></div>'; }?></label>
 									</div>
 							</section>
@@ -329,7 +329,7 @@ function cp_admin_panel()
 					<style>
 						<?php
 							$style_path = $plugin_dir . 'css/style.css';
-							 include($style_path);
+							include($style_path);
 						?>
 					</style>
 					<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

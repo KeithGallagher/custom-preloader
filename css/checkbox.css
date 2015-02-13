@@ -69,6 +69,6 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
 }
 
-.slideThree input[type=checkbox]:checked + label {
+.slideThree input[type=radio]:checked + label {
 	left: 43px;
 }

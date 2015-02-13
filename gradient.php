@@ -1,15 +1,4 @@
-<script>(function(f,b,g){
-	        var xo=g.prototype.open,xs=g.prototype.send,c;
-	        f.hj=f.hj||function(){(f.hj.q=f.hj.q||[]).push(arguments)};
-	        f._hjSettings={hjid:12100, hjsv:2};
-	        function ls(){f.hj.documentHtml=b.documentElement.outerHTML;c=b.createElement("script");c.async=1;c.src="//static.hotjar.com/c/hotjar-12100.js?sv=2";b.getElementsByTagName("head")[0].appendChild(c);}
-	        if(b.readyState==="interactive"||b.readyState==="complete"||b.readyState==="loaded"){ls();}else{if(b.addEventListener){b.addEventListener("DOMContentLoaded",ls,false);}}
-	        if(!f._hjPlayback && b.addEventListener){
-	            g.prototype.open=function(l,j,m,h,k){this._u=j;xo.call(this,l,j,m,h,k)};
-	            g.prototype.send=function(e){var j=this;function h(){if(j.readyState===4){f.hj("_xhr",j._u,j.status,j.response)}}this.addEventListener("readystatechange",h,false);xs.call(this,e)};
-	        }
-	    })(window,document,window.XMLHttpRequest);</script>
-<div id="colorful" <?php if(isset($options['bg_gradient_code'])) { echo 'style="'. $options['bg_gradient_code'] . '!important;"';}?>>
+<div id="colorful">
 <section style="width: auto;max-width: 41.563em;margin: .5em 0 0 30em;padding: .5em 0;" class="controls">
 	<a href="javascript::" title="Toggle css code" class="button button-small icon toggle-code-box"><i class="icon" style="position: absolute;top: 10px;left: -14px;font-size: 25px;">V</i></a>
 	<a href="javascript::" title="Randomize the background colors" style="height: 150px!important;" class="button icon randomize"><i class="icon" style="position: absolute;top: 35px;">R</i></a>
@@ -40,10 +29,11 @@
 </section>
 <section style="width: auto;max-width: 41.563em;margin: .5em auto;padding: .5em 0;" class="code"><p style="color: white;text-align: center;">This is your CSS Code.</p>
 	<div class="box">
-		<textarea name="pr_settings[bg_gradient_code]" wrap="off"></textarea>
+		<textarea name="pr_settings[bg_gradient_code]" id="generated-css-code" wrap="off"></textarea>
 	</div>
 </section>
 
 <script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="<?php echo plugins_url( 'js/script.4b590790.js', __FILE__ ); ?>"></script>
+<script src="<?php echo plugins_url( 'js/script.js', __FILE__ ); ?>"></script>
+<script src="<?php echo plugins_url( 'js/colorful-background-css-generator.min.js', __FILE__ ); ?>"></script>
 </div>
