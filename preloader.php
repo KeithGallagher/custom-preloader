@@ -2,9 +2,9 @@
 
 /*
 Plugin Name: Custom Preloader
-Plugin URI: https://wordpress.org/plugins/custom-preloader/
+Plugin URI: http://plugins.nikostsolakos.com/custom-preloader/
 Description: Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off
-Version: 1.2
+Version: 1.3
 Author: NikosTsolakos
 Author URI: https://profiles.wordpress.org/nikostsolakos
 License: GPLv2
@@ -247,15 +247,16 @@ function bg_color_settings()
 function image_settings() {
 	$options = get_option('pr_settings');
 	if(!isset($options['image_settings'])){
-		$value = 'http://i.imgur.com/Gh9muk7.png'; 
+		$value = 'http://i.imgur.com/Z11v1Ar.png'; 
 	}else{
 		$value = $options['image_settings'];
 	}
 ?>
 	
-	<input type="text" id="image_settings" name="pr_settings[image_settings]" value="<?php echo $value; ?>" />
-    <input type="button" onclick="document.getElementById('image-placeholder').src = document.getElementById('image_settings').value" value="Preview">
-	<img style="max-height:100px; max-width: 100px;margin: -20px 0;" id="image-placeholder" src="" alt="" />
+	<input type="text" id="image_settings" name="pr_settings[image_settings]" onchange="document.getElementById('onchange_image').src = document.getElementById('image_settings').value" style="margin-bottom: -5px;" value="<?php echo $value; ?>" />
+		<hr class="hr_b">
+	<img class="onchange_image hr_img" id="onchange_image" src="<?php echo $value; ?>">
+	<div id="bg_img" style="<?php echo $options['bg_gradient_code'];?>"></div>
 
 <?php }
 
@@ -361,15 +362,17 @@ function cp_admin_panel()
 					<div class="submit" style="margin-left: 130px;margin-top: -72px;">
 						<a href="https://wordpress.org/support/view/plugin-reviews/custom-preloader" target="_blank" class="button-secondary">Rate Plugin</a>
 					</div>
-					<?php
-					function custom_preloader_version() {
-						echo '<p>Custom-Preloader | 1.1</p>';
-					}
-					add_action('wp_footer', 'custom_preloader_version');
-					?>
 				</div>
 			</div>
 		</form>
+		<div class="submit postbox" style="margin-left: 230px;margin-top: -95px;background: transparent;min-width: none;border: 0;box-shadow: 0 0 0 transparent;">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="9QHX4CCAHEF9G">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
 	</div>
 <?php }
 

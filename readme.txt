@@ -1,10 +1,10 @@
 === Custom Preloader ===
 Contributors: NikosTsolakos
-Donate link: https://profiles.wordpress.org/nikostsolakos
+Donate link: https://www.paypal.com/gr/cgi-bin/webscr?cmd=_flow&SESSION=DKQvmV3ATuEMCI7ZV782A_nXaIZuA7iXmRD_gRaGdBvnDfZZAfjSs59yYgG&dispatch=5885d80a13c0db1f8e263663d3faee8da8649a435e198e44a05ba053bc68d12e
 Tags: preloader, custom, image, image loader, image preloader, loader, page preloader, site preloader, colorful background, colorful
 Requires at least: 3.x
-Tested up to: 4.1
-Stable tag: 1.2
+Tested up to: 4.1.1
+Stable tag: 1.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,10 +48,10 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 == Frequently Asked Questions ==
 
 = Are there any settings I can adjust?
-= Yeap, First When you Active my Plugin Click Save Changes.
+= Yeap, First When you Active my Plugin You Music Click Save Changes and then Enjoy.
 
 = Can i turn off the plugin anytime i want?
-= Sure! you can Deactivate Custom Preloader without lose your settings!
+= Sure! you can Deactivate Custom Preloader without lose your settings!= why i can't disable  a tool?= only one tool can be on. ColorFul Background or Simple.
 
 = how can i upload my image?
 = you can put the url of image to the "Set Image" field
@@ -68,7 +68,7 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 2. Screenshot For ColorFul Background Settings
 3. Screenshot For Advanced Settings
 
-== Upgrade Notice ==
+== Upgrade Notice === 1.3 =* Set Preview For Plugin
 = 1.2 =
 * Fix Important Bugs ( ON/OFF Buttons)
 
@@ -79,7 +79,7 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 = 1.0 =
 * Set Background Color
 
-== Changelog ==
+== Changelog === 1.3 =* Set Preview For Plugin= 1.2 =* Fix Important Bugs ( ON/OFF Buttons)
 
 = 1.1 =
 * Set ColorFul Background

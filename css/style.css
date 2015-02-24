@@ -400,3 +400,34 @@ height: 50px!important;
 .slideThree input[type=checkbox]:checked + label {
 	left: 43px;
 }
+
+hr.hr_b {
+	height: 130px;
+	border-right: solid 2px black;
+	position: absolute;
+	width: 0px;
+	margin-left: 200px;
+	display: block;
+	padding-bottom: 118px;
+	border-style: dotted;
+	margin-top: -102px;
+}
+
+img.hr_img {
+	position: relative;
+	margin-left: 240px;
+	width: 500px;
+	top: -65px;
+	height: 180px;
+	margin-bottom: -166px;
+	z-index: 99;
+}
+
+div#bg_img {
+    position: absolute;
+    border: solid 1px black;
+    width: 605px;
+    height: 248px;
+    margin-left: 202px;
+    margin-top: -120px;
+}
