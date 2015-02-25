@@ -36,6 +36,10 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 
 * [Required Fields](https://wordpress.org/plugins/required-fields/)
 
+### Demo
+
+## [Required Fields Login](http://plugins.nikostsolakos.com/wp-login.php)
+
 ### Thanks Too
 
 * For The ColorFul Background: [@WebCoreIT](https://www.twitter.com/WebCoreIT)
