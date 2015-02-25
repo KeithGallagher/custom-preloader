@@ -38,7 +38,7 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 
 ### Demo
 
-## [Required Fields Login](http://plugins.nikostsolakos.com/wp-login.php)
+* [Custom Preloader Login](http://plugins.nikostsolakos.com/wp-login.php)
 
 ### Thanks Too
 
