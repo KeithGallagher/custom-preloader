@@ -4,7 +4,7 @@
 Plugin Name: Custom Preloader
 Plugin URI: http://plugins.nikostsolakos.com/custom-preloader/
 Description: Custom Preloader it's a plugin that it shows to you something, and behind that your website is loading. When your website it's ready then Custom Preloader Goes Off
-Version: 1.3
+Version: 1.4
 Author: NikosTsolakos
 Author URI: https://profiles.wordpress.org/nikostsolakos
 License: GPLv2
@@ -32,11 +32,11 @@ register_activation_hook( __FILE__, "pr_activated");
 function pr_activated() {
     
 	$default_settings = array(
-        'enabled_settings' 			=> 'checked',
+        'enabled_settings' 			=> '',
         'bg_color_settings' 		=> '#eeeeee',
-		'bg_gradient_enabled' 		=> 'checked',
-		'bg_gradient_code' 			=> '',
-        'image_settings' 			=> '',
+		'bg_gradient_enabled' 		=> '',
+		'bg_gradient_code' 			=> 'background: -webkit-linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%), -webkit-linear-gradient(315deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%), -webkit-linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%), -webkit-linear-gradient(135deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%); background: linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%), linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%), linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%), linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);',
+        'image_settings' 			=> 'http://i.imgur.com/Z11v1Ar.png',
         'image_width_settings' 		=> '150px',
         'image_height_settings' 	=> '150px',
 		'image_margin_top' 			=> 'auto',
@@ -68,15 +68,16 @@ function pr_settings_init(){
     // Fields Of Main Section
 	add_settings_field('bg_color_settings', 'Background Color', 'bg_color_settings', __FILE__, 'main_section');
 	add_settings_field('image_settings', 'Set Image', 'image_settings', __FILE__, 'main_section');
-	add_settings_field('image_width_settings', 'Image Width', 'image_width_settings', __FILE__, 'main_section');
-	add_settings_field('image_height_settings', 'Image Height', 'image_height_settings', __FILE__, 'main_section');
+	add_settings_field('bg_gradient_code', 'Set ColorFul Background', 'bg_gradient_code', __FILE__, 'main_section');
 	// Gradient Color
-	add_settings_section('gradient_section', '<div id="gradient"><a href="#collapse2">ColorFul Background</a></div>', 'gradient_section_text', gradient_section_text);		// Advanced Section
+	add_settings_section('gradient_section', '<div id="gradient"><a href="#colorful_bg">ColorFul Background</a></div>', 'gradient_section_text', gradient_section_text);		// Advanced Section
 	// Fields Of Gradient Color
 	add_settings_field('bg_gradient_enabled', '', 'bg_gradient_enabled', __FILE__, 'gradient_section');
 		
-	add_settings_section('advanced_section', '<div id="advanced"><a href="#collapse1">Advanced</a></div>', 'advanced_section_text', advanced_section_text);
+	add_settings_section('advanced_section', '<div id="advanced"><a href="#positions">Positions</a></div>', 'advanced_section_text', advanced_section_text);
 	// Fields Of Advanced Section
+	add_settings_field('image_width_settings', '', 'image_width_settings', __FILE__, 'advanced_section');
+	add_settings_field('image_height_settings', '', 'image_height_settings', __FILE__, 'advanced_section');
 	add_settings_field('image_margin_top', '', 'image_margin_top', __FILE__, 'advanced_section');
 	add_settings_field('image_margin_left', '', 'image_margin_left', __FILE__, 'advanced_section');
 	add_settings_field('image_margin_right', '', 'image_margin_right', __FILE__, 'advanced_section');
@@ -87,200 +88,7 @@ add_action('admin_init', 'pr_settings_init' );
 function main_section_text(){
 }
 
-function bg_gradient_enabled(){
-	$options = get_option('pr_settings');
-	if(!isset($options['bg_gradient_enabled']))
-	{
-		$options['bg_gradient_enabled'] = true;
-		echo "<input type='checkbox' name='pr_settings[bg_gradient_enabled]' value='1' checked='checked'/>";
-	}
-	else
-	{
-		$options['bg_gradient_enabled'] = false;
-		echo "<input type='checkbox' name='pr_settings[bg_gradient_enabled]' value='1'/>";
-	}    
-}
-
-function gradient_section_text(){
-	echo '<div id="collapse2" style="display:none">';
-		$gradient_path = $plugin_dir . 'gradient.php';
-		include($gradient_path);
-	echo '</div>';
-}
-
-function advanced_section_text()
-{
-	$title['image_margin_top'] = 'Image Margin Top';
-	$title['image_margin_left'] = 'Image Margin Left';
-	$title['image_margin_right'] = 'Image Margin Right';
-	$title['image_margin_bottom'] = 'Image Margin Bottom';
-	$options = get_option('pr_settings');
-	echo '<div id="collapse1" style="display:none"><div id="contact_main" style="width:100%; height:100%;"><div class="content" style=" padding: 5px; ">';
-	echo '<table class="form-table"><tbody>';
-	if(!isset($options['image_margin_top']))
-	{
-		$value = 'auto';
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_top'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_top" name="pr_settings[image_margin_top]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-	else
-	{
-		$value = $options['image_margin_top'];
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_top'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_top" name="pr_settings[image_margin_top]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-
-	if(!isset($options['image_margin_left']))
-	{
-		$value = 'auto';
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_left'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_left" name="pr_settings[image_margin_left]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-	else
-	{
-		$value = $options['image_margin_left'];
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_left'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_left" name="pr_settings[image_margin_left]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-
-	if(!isset($options['image_margin_right']))
-	{
-		$value = 'auto';
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_right'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_right" name="pr_settings[image_margin_right]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-	else
-	{
-		$value = $options['image_margin_right'];
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_right'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_right" name="pr_settings[image_margin_right]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-
-	if(!isset($options['image_margin_bottom']))
-	{
-		$value = 'auto';
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_bottom'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_bottom" name="pr_settings[image_margin_bottom]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-	else
-	{
-		$value = $options['image_margin_bottom'];
-		echo '<tr>';
-			echo '<th scope="row">'.$title['image_margin_bottom'].'</th>';
-				echo '<td>';
-					echo '<input type="text" id="image_margin_bottom" name="pr_settings[image_margin_bottom]" value="'.$value.'" />';
-				echo '</td>';
-		echo '</tr>';
-	}
-	echo '</table></tbody></div></div></div>';
-}
-
-function pr_settings_validate($input) {
-	return $input; 
-}
-
-
-// =====
-// 3. Admin Panel (Settings > Custom Preloader)
-// =====
-
-// Options' functions
-function enabled_settings()
-{
-	$options = get_option('pr_settings');
-	if(isset($options['enabled_settings']))
-	{
-		$options['enabled_settings'] = true;
-		echo "<input type='checkbox' name='pr_settings[enabled_settings]' value='1' checked='checked'/>";
-	}
-	else
-	{
-		$options['enabled_settings'] = false;
-		echo "<input type='checkbox' name='pr_settings[enabled_settings]' value='1'/>";
-	}    
-	echo '<p class="description">Enable/Disable preloader.</p>';
-}
-
-function bg_color_settings()
-{
-	$options = get_option('pr_settings');
-	if(!isset($options['bg_color_settings']))
-	{  
-		$value = '#eeeeee';
-	}
-	else
-	{
-		$value = $options['bg_color_settings'];
-	} ?>
-	<script type="text/javascript" src="<?php echo plugins_url( 'js/jscolor.js', __FILE__ );?>"></script>
-	<input type="text" class="color" name="pr_settings[bg_color_settings]" value="<?php echo $value; ?>" <?php if(isset($options['bg_gradient_enabled'])) {echo 'disabled'; echo ' style="cursor: no-drop;"';}?>/>
-<?php }
-
-function image_settings() {
-	$options = get_option('pr_settings');
-	if(!isset($options['image_settings'])){
-		$value = 'http://i.imgur.com/Z11v1Ar.png'; 
-	}else{
-		$value = $options['image_settings'];
-	}
-?>
-	
-	<input type="text" id="image_settings" name="pr_settings[image_settings]" onchange="document.getElementById('onchange_image').src = document.getElementById('image_settings').value" style="margin-bottom: -5px;" value="<?php echo $value; ?>" />
-		<hr class="hr_b">
-	<img class="onchange_image hr_img" id="onchange_image" src="<?php echo $value; ?>">
-	<div id="bg_img" style="<?php echo $options['bg_gradient_code'];?>"></div>
-
-<?php }
-
-function image_width_settings() {
-	$options = get_option('pr_settings');
-	if(!isset($options['image_width_settings'])){
-		$value = '150px';
-	}else{
-		$value = $options['image_width_settings'];
-	}
-?>
-	<input type="text" id="image_width_settings" name="pr_settings[image_width_settings]" value="<?php echo $value; ?>" />
-<?php }
-
-function image_height_settings() {
-	$options = get_option('pr_settings');
-	if(!isset($options['image_height_settings'])){
-		$value = '150px';
-	}else{
-		$value = $options['image_height_settings'];
-	}
-?>
-	<input type="text" id="image_height_settings" name="pr_settings[image_height_settings]" value="<?php echo $value; ?>" />
-<?php }
+include('include/functions.php');
 
 // Options' HTML output
 
@@ -308,15 +116,15 @@ function cp_admin_panel()
 							<section style=" margin-bottom: -30px !important; ">
 								<p>Simple Background: </p>
 									<div class="slideThree">
-										<input type="checkbox" class="ch_location" value="None" id="slideThree" style="display: none;" name="pr_settings[enabled_settings]" <?php if(isset($options['bg_gradient_enabled'])) {echo 'disabled';}?> <?php if (isset($options['enabled_settings'])) { echo 'checked="true"';}?> />
-										<label for="slideThree"><?php if(isset($options['bg_gradient_enabled'])) { echo '<div class="tool-tip slideIn top">Set Off <b>ColorFul Background</b></div>'; }?></label>
+										<?php enabled_settings();?>
+										<label for="slideThree" id="gettooltip"></label>
 									</div>
 							</section>
 							<section style=" margin-bottom: -30px !important; ">
 								<p>ColorFul Background: </p>
 									<div class="slideThree">
-										<input type="checkbox" class="ch_location" value="None" id="bg_gradient_enabled" style="display: none;" name="pr_settings[bg_gradient_enabled]" <?php if(isset($options['enabled_settings'])) {echo 'disabled';}?> <?php if (isset($options['bg_gradient_enabled'])) { echo 'checked="true"';}?> />
-										<label for="bg_gradient_enabled"><?php if(isset($options['enabled_settings'])) { echo '<div class="tool-tip slideIn top">Set Off <b>Simple Background</b></div>'; }?></label>
+										<?php bg_gradient_enabled();?>
+										<label for="bg_gradient_enabled" id="gettooltip_s"></label>
 									</div>
 							</section>
 						</span>
@@ -334,118 +142,82 @@ function cp_admin_panel()
 						?>
 					</style>
 					<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-					<script>
-					$('#advanced a').click(function () {
-						//get collapse content selector
-						var collapse_content_selector = $(this).attr('href');
-						//make the collapse content to be shown or hide
-						var toggle_switch = $(this);
-						$(collapse_content_selector).slideToggle(function () {
-							$(this).is(':visible')? toggle_switch.text('Close') : toggle_switch.text('Advanced');
-						});
-					});
-					</script>
-					<script>
-					$('#gradient a').click(function () {
-						//get collapse content selector
-						var collapse_content_selector = $(this).attr('href');
-						//make the collapse content to be shown or hide
-						var toggle_switch = $(this);
-						$(collapse_content_selector).slideToggle(function () {
-							$(this).is(':visible')? toggle_switch.text('Close ColorFul Background') : toggle_switch.text('ColorFul Background');
-						});
-					});
-					</script>
+					<script src="<?php echo plugins_url( '/js/dd_tabs.js', __FILE__ );?>"></script>
+
+					
 					<p class="submit" style="margin-left: 10px;">
 						<input id="submit-cp-options" name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
 					</p>
 					<div class="submit" style="margin-left: 130px;margin-top: -72px;">
 						<a href="https://wordpress.org/support/view/plugin-reviews/custom-preloader" target="_blank" class="button-secondary">Rate Plugin</a>
 					</div>
+					<div class="submit" style="margin-left: 230px;margin-top: -72px;">
+						<a href="https://wordpress.org/support/plugin/custom-preloader" style="background: #D51E1E;border-color: #9E1B1B;" target="_blank" class="button-primary">Support</a>
+					</div>
 				</div>
 			</div>
 		</form>
-		<div class="submit postbox" style="margin-left: 230px;margin-top: -95px;background: transparent;min-width: none;border: 0;box-shadow: 0 0 0 transparent;">
+		<div class="submit postbox" style="margin-left: 310px;margin-top: -95px;background: transparent;min-width: none;border: 0;box-shadow: 0 0 0 transparent;">
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_s-xclick">
 							<input type="hidden" name="hosted_button_id" value="9QHX4CCAHEF9G">
 							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 						</form>
 					</div>
+			<script type="text/javascript">
+			/* ColorFul Bg Button */
+			$('#bg_gradient_enabled').change(function() {
+				
+				if($("#bg_gradient_enabled").prop('checked') == false) {
+					document.getElementById("slideThree").removeAttribute('disabled');
+					document.getElementById("smplbg").removeAttribute('disabled');
+						$('#smplbg').removeAttr('style');
+						$('#bg_img').removeAttr('style');
+						$('#tooltip_bg_g').remove();
+				} else {
+					document.getElementById("bg_img").setAttribute("style", <?php echo json_encode($options['bg_gradient_code']);?>);
+					document.getElementById("slideThree").setAttribute('disabled', 'disabled');
+					document.getElementById("smplbg").setAttribute('disabled', 'disabled');
+					document.getElementById("smplbg").style.cursor = 'no-drop';
+						$('#gettooltip').append('<div id="tooltip_bg_g" class="tool-tip slideIn top tltp">Set <b style="color: red">OFF</b> <b>ColorFul Background</b></div>');
+				}
+			});
+
+			/* Simple Bg Button */
+			$('#slideThree').change(function() {
+									
+				if($("#slideThree").prop('checked') == false) {
+					document.getElementById("bg_gradient_enabled").removeAttribute('disabled');
+					document.getElementById("bg_gradient_code").removeAttribute('disabled');
+						$('#bg_gradient_code').removeAttr('style');
+						$('#bg_img').removeAttr('style');
+						$('#tooltip_sbg').remove();
+				} else {
+					//document.getElementById("bg_img").setAttribute("style", "background: " + document.getElementById("smplbg").value);
+					document.getElementById("bg_gradient_code").style.cursor = 'no-drop';
+					document.getElementById("bg_gradient_code").setAttribute('disabled', 'disabled');
+					document.getElementById("bg_gradient_enabled").setAttribute('disabled', 'disabled');
+						$('#gettooltip_s').append('<div id="tooltip_sbg" class="tool-tip slideIn top tltp">Set <b style="color: red">OFF</b> <b>Simple Background</b></div>');
+				}
+			});
+			</script>
 	</div>
 <?php }
 
 function ap_admin_actions() {
 	add_options_page("Preloader Options", "Custom Preloader", 'manage_options', "Custom_Preloader", "cp_admin_panel");
 }
+
+function settings_page_link($links) { 
+  $settings_link = '<a href="options-general.php?page=Custom_Preloader">Settings</a>'; 
+  array_unshift($links, $settings_link); 
+  return $links; 
+}
+ 
+$plugin = plugin_basename(__FILE__); 
+add_filter("plugin_action_links_$plugin", 'settings_page_link' );
 // =====
 // 4. Frontend
 // =====
-function enqueue_AP()
-{
-	$options = get_option('pr_settings');
-	wp_enqueue_script('jquery');
-}
-add_action('wp_enqueue_scripts', 'enqueue_AP');
-	// add in <head>
-	function head_cpreloader()
-	{
-		$options = get_option('pr_settings');
-		if(isset($options['enabled_settings']))
-		{
-			if(is_home() || is_front_page())
-			{
-				echo "<script type='text/javascript' >
-					window.addEventListener('load', function load(event){
-						window.removeEventListener('load', load, false);
-						console.log('window load');
-						jQuery('#preloader').fadeOut();
-						jQuery('#preloader_style').remove();
-					},false);
-				</script>";
-			}
-		}
-		$options = get_option('pr_settings');
-		if(isset($options['bg_gradient_enabled']))
-		{
-			if(is_home() || is_front_page())
-			{
-				echo "<script type='text/javascript' >
-					window.addEventListener('load', function load(event){
-						window.removeEventListener('load', load, false);
-						console.log('window load');
-						jQuery('#preloader').fadeOut();
-						jQuery('#preloader_style').remove();
-					},false);
-				</script>";
-			}
-		}
-	}
-	add_action('wp_head', 'head_cpreloader');
-	// add in Footer
-	function footer_cpreloader()
-	{
-		$options = get_option('pr_settings');
-		if(isset($options['enabled_settings']))
-		{
-			if(is_home() || is_front_page())
-			{
-				$imgt = '<img src="'.$options['image_settings'].'" alt="preloader" style=" position: absolute; top: 50%; left: 50%; margin: '.$options['image_margin_top'].' '.$options['image_margin_right'].' '.$options['image_margin_bottom'].' '.$options['image_margin_left'].'; padding: 0 0 0 0; width: '.$options['image_width_settings'].' ; height: '.$options['image_height_settings'].'; " />';
-				$divt = '<div id="preloader" style="background-color: ' . $options['bg_color_settings'] . ';  position: fixed; top: 1px; width: 100%; height: 100%; z-index: 9999999999999;">'.$imgt.'</div><style id="preloader_style">html {overflow:hidden;}</style>';
-				echo $divt;
-			}
-		}
-		$options = get_option('pr_settings');
-		if(isset($options['bg_gradient_enabled']))
-		{
-			if(is_home() || is_front_page())
-			{
-				$imgt = '<img src="'.$options['image_settings'].'" alt="preloader" style=" position: absolute; top: 50%; left: 50%; margin: '.$options['image_margin_top'].' '.$options['image_margin_right'].' '.$options['image_margin_bottom'].' '.$options['image_margin_left'].'; padding: 0 0 0 0; width: '.$options['image_width_settings'].' ; height: '.$options['image_height_settings'].'; " />';
-				$divt = '<div id="preloader" style="background-color: ' . $options['bg_gradient_code'] . ';  position: fixed; top: 1px; width: 100%; height: 100%; z-index: 9999999999999;">'.$imgt.'</div><style id="preloader_style">html {overflow:hidden;}</style>';
-				echo $divt;
-			}
-		}
-	}
-	add_action('wp_footer', 'footer_cpreloader');
+include('include/frontend.php');
 ?>

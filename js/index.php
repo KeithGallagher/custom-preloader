@@ -1,1 +1,3 @@
-<?php wp_redirect( home_url() ); exit; ?>
+<?php 
+	wp_die( __('Cheating Huuu??, Not Here....') );
+?>
