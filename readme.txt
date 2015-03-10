@@ -27,7 +27,7 @@ Custom Preloader Hides your Website and shows something such as an image and whe
 ### Demo
 * Custom Preloader Demo: [CPreloader](https://plugins.nikostsolakos.com/wp-login.php)
 
-### Thanks Too
+### Thanks To
 * For The ColorFul Background: [@WebCoreIT](https://www.twitter.com/WebCoreIT)
 
 == Installation ==
