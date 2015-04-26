@@ -1,6 +1,6 @@
 === Custom Preloader ===
 Contributors: NikosTsolakos
-Donate link: https://www.paypal.com/gr/cgi-bin/webscr?cmd=_flow&SESSION=DKQvmV3ATuEMCI7ZV782A_nXaIZuA7iXmRD_gRaGdBvnDfZZAfjSs59yYgG&dispatch=5885d80a13c0db1f8e263663d3faee8da8649a435e198e44a05ba053bc68d12e
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MM7GG79LVV4T8
 Tags: preloader, custom, image, image loader, image preloader, loader, page preloader, site preloader, colorful background, colorful
 Requires at least: 3.x
 Tested up to: 4.1.1

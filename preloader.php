@@ -160,7 +160,7 @@ function cp_admin_panel()
 		<div class="submit postbox" style="margin-left: 310px;margin-top: -95px;background: transparent;min-width: none;border: 0;box-shadow: 0 0 0 transparent;">
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="9QHX4CCAHEF9G">
+							<input type="hidden" name="hosted_button_id" value="MM7GG79LVV4T8">
 							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 						</form>
 					</div>
